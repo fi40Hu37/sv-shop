@@ -7,6 +7,7 @@ import Products from './components/Products'
 import Buy from './components/Buy'
 import './App.css'
 import Orders from './components/Orders'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -66,13 +67,14 @@ function App() {
     <div className="App" dir="rtl">
     <div className='general-content'>
      <Routes>
-     <Route path="/" element={<Home products={products} userName={userName} setUserName={setUserName} setOrders={setOrders} cart={cart} setCart={setCart} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}/>} />
+       <Route path="/" element={<Home products={products} userName={userName} setUserName={setUserName} setOrders={setOrders} cart={cart} setCart={setCart} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated}/>} />
        <Route path='/sign up' element={<SignUp addUser={addUser}/>}/> 
        <Route path='/sign in' element={<SignIn allUsers={allUsers} setIsAuthenticated={setIsAuthenticated} setUserName={setUserName}/>}/>
        <Route path='/products' element={<Products products={products} userName={userName} setOrders={setOrders}  cart={cart} setCart={setCart} isAuthenticated={isAuthenticated}/>}/>
        <Route path='/buy' element={<Buy setOrders={setOrders} userName={userName} allUsers={allUsers} cart={cart} setCart={setCart} isAuthenticated={isAuthenticated}/>}/>
        <Route path='/orders' element={<Orders orders={orders} userName={userName} isAuthenticated={isAuthenticated}/>}/>
      </Routes>
+     <Footer/>
     </div>
 
   </div>
